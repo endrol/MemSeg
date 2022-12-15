@@ -120,7 +120,7 @@ def run(cfg):
 
     # build MemSeg
     model = MemSeg(
-        memory_bank       = memory_bank,
+        memory_bank = memory_bank,
         feature_extractor = feature_extractor
     ).to(device)
 

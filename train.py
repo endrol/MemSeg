@@ -9,7 +9,8 @@ import torch
 import torch.nn.functional as F
 import numpy as np
 from typing import List
-from anomalib.utils.metrics import AUPRO, AUROC
+from metrics.aupro import AUPRO
+from metrics.auroc import AUROC
 
 _logger = logging.getLogger('train')
 
@@ -29,7 +30,6 @@ class AverageMeter:
         self.sum += val * n
         self.count += n
         self.avg = self.sum / self.count
-
 
 
 def training(model, trainloader, validloader, criterion, optimizer, scheduler, num_training_steps: int = 1000, loss_weights: List[float] = [0.6, 0.4], 
